@@ -1,0 +1,308 @@
+
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(89deg, #03A9F4, #E91E63);
+    color: white;
+    position: relative;
+}
+.hero::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 200px;
+    width: 50px;
+    height: 50px;
+    background-color: #ff0af7;
+    border-radius: 50%;
+    animation: ToBottom 3s infinite both;
+}
+@keyframes ToBottom{
+    0%{
+      bottom: 0%;
+    }
+    50%{
+      bottom: 80%;
+    }
+  }
+.aniamation::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    width: 50px;
+    height: 50px;
+    background-color: #0aff0a;
+    border-radius: 50%;
+    animation: ToBottom 6s infinite both;
+}
+.aniamation:nth-child(1):before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: #ff0af7;
+    border-radius: 50%;
+    animation: Toleft 4s infinite both;
+}
+@keyframes Toleft{
+  0%{
+    left: 0%;
+  }
+  50%{
+    left: 90%;
+    background-color: #0095ff;
+  }
+}
+.hero::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 60px;
+    width: 50px;
+    height: 50px;
+    background-color: #0095ff;
+    border-radius: 50%;
+    animation: toTop 3s infinite both;
+}
+@keyframes toTop{
+    0%{
+      top: 0%;
+    }
+    50%{
+      top: 80%;
+    }
+  }
+.aniamation::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 200px;
+    width: 50px;
+    height: 50px;
+    background-color: #e1ff00;
+    border-radius: 50%;
+    animation: toTop 6s infinite both;
+}
+.aniamation:nth-child(1):after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 50px;
+    height: 50px;
+    background-color: #0095ff;
+    border-radius: 50%;
+    animation: toright 4s infinite both;
+}
+
+@keyframes toright{
+  0%{
+    right: 0%;
+  }
+  50%{
+    right: 90%;
+    background-color: #ff0af7;
+  }
+}
+.colck-container {
+    width: 500px;
+    height: 180px;
+    background: rgb(132, 10, 254);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    border-radius: 10px;
+}
+
+.clock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(40px);
+   
+}
+.clock span {
+    font-size: 60px;
+    margin: -29px 10px;
+    font-family: monospace;
+}
+.colck-container::before{
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -30px;
+    width: 150px;
+    height: 150px;
+    background: #ff0af7;
+    z-index: -1;
+    border-radius: 5px;
+    animation: clock 3s infinite;
+}
+@keyframes clock{
+    0%{
+        left: 0%;
+    }
+    50%{
+        left: 80%;
+    }
+}
+.colck-container::after{
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -30px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #0095ff;
+    z-index: -1;
+    animation: ClkCircle 2s infinite;
+}
+@keyframes ClkCircle{
+    0%{
+        right: 0%;
+    }
+    50%{
+        right: 80%;
+    }
+}
+.calender-container {
+    position: relative;
+    width: 480px;
+    height: 180px;
+    left: 38%;
+    transform: translate(-20%, 100%);
+    background: linear-gradient(355deg, #009688, #ff4400);
+}
+.calender-container::before{
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -30px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #0095ff;
+    z-index: -1;
+    animation: calender 3s infinite;
+}
+@keyframes calender{
+    0%{
+        left: 0%;
+    }
+    50%{
+        left: 80%;
+    }
+}
+.calender-container::after{
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -30px;
+    width: 150px;
+    height: 150px;
+    background: #ff0af7;
+    z-index: -1;
+    border-radius: 5px;
+    animation: clndr 5s infinite;
+}
+@keyframes clndr{
+    0%{
+        right: 0%;
+    }
+    50%{
+        right: 80%;
+    }
+}
+.calender {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* top: 50%; */
+    width: 100%;
+    height: 100%;
+    text-transform: capitalize;
+    backdrop-filter: blur(40px);
+}
+.calender span{
+    font-size: 20px;
+    font-weight: 600;
+    font-family: math;
+    margin: 0px 3px
+}
+span#dy {
+    font-size: 25px;
+    color: #000000;
+    font-weight: bold;
+}
+
+span#monthNow {
+    font-size: 28px;
+    color: #ffffff;
+    font-weight: bold;
+    position: relative;
+    left: 4px;
+}
+
+span#dateNow {
+    font-size: 26px;
+    color: #3700ff;
+    font-weight: bold;
+}
+
+span#yearNow {
+    font-size: 27px;
+    color: #22ff78;
+    font-weight: bold;
+}
+@media (max-width: 770px) {
+    .colck-container {
+        width: 320px;
+        height: 120px;
+    }
+    
+    .clock {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    
+    .clock  span {
+        font-size: 20px;
+    }
+    .calender {
+  width: 100%;
+  height: 100%;
+  position: relative;
+    }
+    .calender-container{
+        width: 320px;
+        height: 120px;
+        position: relative;
+    }
+    .calender-container::after{
+    width: 90px;
+    height: 90px;
+    }
+    .calender-container::before{
+        width: 90px;
+        height: 90px;
+        }
+
+        .colck-container::after{
+            width: 90px;
+            height: 90px;
+            }
+            .colck-container::before{
+                width: 90px;
+                height: 90px;
+                }
+}

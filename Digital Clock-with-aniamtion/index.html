@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital-Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hero">
+    <div class="aniamation"></div>
+    <div class="aniamation"></div>
+    <div class="colck-container">
+        <div class="clock">
+           <span id="hrs">00</span>
+           <span>:</span>
+           <span id="min">00</span>
+           <span>:</span>
+           <span id="sec">00</span>
+           <span id="ampm"></span>
+        </div>
+    </div>
+  <div class="calender-container">
+  <div class="calender">
+    <span id="dy"></span>
+    <span>:</span>
+    <span id="monthNow"></span>
+    <span id="dateNow"></span>
+    <span>:</span>
+    <span id="yearNow"></span>
+ 
+  </div>
+  </div>
+</div> 
+    <script>
+  let hrs = document.querySelector('#hrs');
+  let min = document.querySelector('#min');
+  let sec = document.querySelector('#sec');
+  let ChangDay = document.querySelector('#ampm');
+
+  let dy = document.querySelector('#dy');
+  let monthNow = document.querySelector('#monthNow');
+  let dateNow = document.querySelector('#dateNow');
+  let yearNow = document.querySelector('#yearNow');
+
+  let Todaytime = new Date();
+  let weeksDay = ['Sunday', 'Monday', 'Tuesday', 'wednesday', 'thursday', 'Friday', 'Saturday'];
+  let MonthName = ['January', 'February', 'March', 'April', 'May', 'Jun', 'July', 'August', 'September', 'October', 'November', 'December'];
+  dy.innerHTML = weeksDay[Todaytime.getDay()];
+  monthNow.innerHTML = MonthName[Todaytime.getMonth()];
+  dateNow.innerHTML = (Todaytime.getDate()<10? '0':'')+Todaytime.getDate();
+  yearNow.innerHTML = Todaytime.getFullYear();
+
+ setInterval(()=>{
+  let Todaytime = new Date();
+  hrs.innerHTML = (Todaytime.getHours()<10? '0':'')+Todaytime.getHours();
+  min.innerHTML = (Todaytime.getMinutes()<10? '0':'')+Todaytime.getMinutes();
+  sec.innerHTML = (Todaytime.getSeconds()<10? '0':'')+Todaytime.getSeconds();
+  ChangDay.innerHTML = Todaytime.getHours()<12? 'AM':"PM";
+ },1000);
+    </script>
+</body>
+</html>
